@@ -1,0 +1,20 @@
+---
+- name: Install Notepad++
+  tasks:
+    - name: Download the installer
+      win_get_url:
+        url: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.4.3/npp.8.4.3.Installer.x64.exe'
+        checksum: 4499f826cc18b91d2a264bbf9a7e5795eeba3b41a13df92e8c78f34dd10a5b25
+        checksum_algorithm: sha256
+        dest: 'C:\Users\Administrator\Downloads\npp.8.4.3.Installer.x64.exe'
+
+    - name: Install MSI
+      win_package:
+        path: 'C:\Users\Administrator\Downloads\npp.8.4.3.Installer.x64.exe'
+        creates_version: '7.54'
+        creates_path: 'C:\Program Files\Notepad++\notepad++.exe'
+        state: present
+        arguments: '/S'
+        product_id:
+        state: present
+      when: ansible_os_family == 'Windows'
