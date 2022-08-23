@@ -1,5 +1,6 @@
 ---
 - name: Install Notepad plus plus
+  hosts: all
   tasks:
     - name: Download the installer
       win_get_url:
