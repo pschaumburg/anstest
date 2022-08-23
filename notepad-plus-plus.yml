@@ -1,5 +1,5 @@
 ---
-- name: Install Notepad++
+- name: Install Notepad plus plus
   tasks:
     - name: Download the installer
       win_get_url:
