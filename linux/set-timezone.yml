@@ -2,7 +2,7 @@
 - name: Set timezone
   hosts: all
   tasks:
-  - name: set timezone to Asia/Tokyo
+  - name: set timezone to Europe/Berlin
     timezone:
       name: Europe/Berlin
   - name: Start service systemd-timesyncd.service, if not started
