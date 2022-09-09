@@ -1,5 +1,5 @@
 ---
-- name: Set locale to de_DE
+- name: Disable UAC
   hosts: all
   tasks:
   - name: turn UAC off
