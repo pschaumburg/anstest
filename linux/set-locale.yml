@@ -7,4 +7,4 @@
       name: de_DE.UTF-8
       state: present
   - name: set as default locale
-    command: localectl set-locale LANG=de_DE.UTF-8 LC_ALL=de_DE.UTF-8
+    command: localectl set-locale LANG=de_DE.UTF-8
