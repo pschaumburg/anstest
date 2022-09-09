@@ -1,0 +1,15 @@
+---
+- name: Set timezone
+  hosts: all
+  tasks:
+  - name: set timezone to Asia/Tokyo
+    timezone:
+      name: Europe/Berlin
+  - name: Start service systemd-timesyncd.service, if not started
+    ansible.builtin.service:
+      name: systemd-timesyncd.service
+      state: started
+  - name: Enable service systemd-timesyncd.service, if not started
+    ansible.builtin.service:
+      name: systemd-timesyncd.service
+      enabled: yes
